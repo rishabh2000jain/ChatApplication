@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+    <variable
+        name="sendButton"
+        type="com.example.chatApplication.chatScreen.ChatActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".chatScreen.ChatActivity"
+        android:background="@color/lightest_grey_color"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="10dp"
+            android:background="@color/green"
+            app:title="Let's Chat"
+            app:titleTextColor="@color/white"
+            android:orientation="horizontal"
+            app:menu="@menu/chat_activity_menu"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/message_field"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf ="@id/toolbar"
+            />
+
+        <ProgressBar
+            android:id="@+id/chat_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:id="@+id/message_field"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/message_input_edit_text_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/common_margin"
+            android:layout_marginLeft="@dimen/common_margin"
+            android:layout_marginRight="@dimen/common_margin"
+
+            >
+
+            <EditText
+                android:id="@+id/chat_text"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/message_input_edit_text_height"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/text_send_button"
+                android:background="@drawable/message_type_edit_text_bg"
+                android:hint="@string/type_your_message"
+                android:padding="@dimen/common_padding"
+                android:layout_alignBaseline="@id/text_send_button"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/text_send_button"
+                android:layout_width="@dimen/send_message_button_height_width"
+                android:layout_height="@dimen/send_message_button_height_width"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/common_margin"
+                android:backgroundTint="@color/green"
+                android:onClick="@{()->sendButton.buttonSend()}"
+                app:cardCornerRadius="@dimen/send_message_button_corner_radius">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/green"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_send"
+                    android:contentDescription="@string/send_message_button_image" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

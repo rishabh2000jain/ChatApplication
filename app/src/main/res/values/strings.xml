@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ChatApplication</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="not_a_user">not a user? Register</string>
+    <string name="logout">logout</string>
+    <string name="type_your_message">Type your message</string>
+    <string name="send_message_button_image">send message button image</string>
+    <string name="free_app_email">*****@gmail.com</string>
+</resources>

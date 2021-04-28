@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="chatString"
+            type="String" />
+        <variable
+            name="email"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_20"
+        android:background="@color/message_bg_color"
+        android:gravity="end"
+        android:elevation="@dimen/elevation_10"
+        android:backgroundTint="@color/light_blue"
+        android:padding="@dimen/common_padding">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin"
+            android:layout_toStartOf="@+id/user_image"
+            android:elevation="@dimen/elevation_10"
+            android:padding="@dimen/common_padding"
+            android:text="@{chatString}"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textSize="@dimen/common_text_size" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_image"
+            android:layout_width="@dimen/profile_height_width"
+            android:layout_height="@dimen/profile_height_width"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/user_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text"
+            android:layout_marginEnd="@dimen/common_margin"
+            android:layout_toStartOf="@+id/wait_send_icon"
+            android:text="@{email}"
+            android:textColor="@color/gray"
+            />
+
+        <ImageView
+            android:id="@+id/wait_send_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_image"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/common_margin"
+            android:src="@drawable/ic_message_sent_icon" />
+    </RelativeLayout>
+</layout>
